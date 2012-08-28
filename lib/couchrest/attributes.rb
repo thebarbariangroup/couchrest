@@ -29,7 +29,7 @@ module CouchRest
       :encode_json, :as_json, :to_json, :frozen?
 
     def []=(key, value)
-      _attributes[key.to_s] = value
+      _attributes[key.to_s] = value unless self.frozen?
     end
     def [](key)
       _attributes[key.to_s]
